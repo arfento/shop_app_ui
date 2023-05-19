@@ -64,97 +64,97 @@ class _HomePageState extends State<HomePage> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          // Stack(
-          //   alignment: AlignmentDirectional.bottomCenter,
-          //   children: [
-          //     CarouselSlider.builder(
-          //       itemCount: _bannerUrl.length,
-          //       itemBuilder: (context, index, realIndex) {
-          //         return buildBannerCarousel(_bannerUrl[index], index, size);
-          //       },
-          //       options: CarouselOptions(
-          //         autoPlay: true,
-          //         autoPlayAnimationDuration: const Duration(milliseconds: 500),
-          //         autoPlayInterval: const Duration(seconds: 5),
-          //         height: kIsWeb ? size.height * 0.35 : null,
-          //         viewportFraction: kIsWeb ? 0.4 : 1,
-          //         enlargeCenterPage: kIsWeb ? true : false,
-          //         onPageChanged: (index, reason) {
-          //           setState(() {
-          //             _bannerActiveIndex = index;
-          //           });
-          //         },
-          //       ),
-          //     ),
-          //     buildCarouselIndicator(
-          //         activeIndex: _bannerActiveIndex,
-          //         count: _bannerUrl.length,
-          //         controller: _bannerCarouselController),
-          //   ],
-          // ),
-          // const SizedBox(height: 24),
-          // Padding(
-          //   padding: const EdgeInsets.only(left: 16),
-          //   child: Column(
-          //     crossAxisAlignment: CrossAxisAlignment.start,
-          //     children: <Widget>[
-          //       Text(
-          //         'Special For You, $_username.',
-          //         style: defaultHeader2,
-          //       ),
-          //       const Text(
-          //         'Choose the product yo want.',
-          //         style: TextStyle(fontSize: 12),
-          //       ),
-          //     ],
-          //   ),
-          // ),
-          // CarouselSlider.builder(
-          //   carouselController: _productCarouselController,
-          //   itemCount: _productCarousel.length,
-          //   itemBuilder: (context, index, realIndex) {
-          //     return buildProductCarousel(_productCarousel[index], index);
-          //   },
-          //   options: CarouselOptions(
-          //     autoPlay: kIsWeb ? true : false,
-          //     enlargeCenterPage: true,
-          //     viewportFraction: 0.7,
-          //     height: size.height * 0.25,
-          //     aspectRatio: 1 / 1,
-          //     onPageChanged: (index, reason) {
-          //       setState(() {
-          //         _productActiveIndex = index;
-          //         _productName = _productCarousel[index].name;
-          //         _productAlias = _productCarousel[index].alias;
-          //         _productPrice = _productCarousel[index].price;
-          //       });
-          //     },
-          //   ),
-          // ),
-          // Center(
-          //   child: Column(
-          //     children: [
-          //       Text(
-          //         _productName,
-          //         style: defaultHeader2,
-          //       ),
-          //       Text(_productAlias),
-          //       Text(
-          //         '\$$_productPrice',
-          //         style: secondaryHeader1,
-          //       ),
-          //     ],
-          //   ),
-          // ),
-          // if (kIsWeb) ...[
-          //   Center(
-          //     child: buildCarouselIndicator(
-          //       activeIndex: _productActiveIndex,
-          //       count: _productCarousel.length,
-          //       controller: _productCarouselController,
-          //     ),
-          //   ),
-          // ],
+          Stack(
+            alignment: AlignmentDirectional.bottomCenter,
+            children: [
+              CarouselSlider.builder(
+                itemCount: _bannerUrl.length,
+                itemBuilder: (context, index, realIndex) {
+                  return buildBannerCarousel(_bannerUrl[index], index, size);
+                },
+                options: CarouselOptions(
+                  autoPlay: true,
+                  autoPlayAnimationDuration: const Duration(milliseconds: 500),
+                  autoPlayInterval: const Duration(seconds: 5),
+                  height: kIsWeb ? size.height * 0.35 : null,
+                  viewportFraction: kIsWeb ? 0.4 : 1,
+                  enlargeCenterPage: kIsWeb ? true : false,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      _bannerActiveIndex = index;
+                    });
+                  },
+                ),
+              ),
+              buildCarouselIndicator(
+                  activeIndex: _bannerActiveIndex,
+                  count: _bannerUrl.length,
+                  controller: _bannerCarouselController),
+            ],
+          ),
+          const SizedBox(height: 24),
+          Padding(
+            padding: const EdgeInsets.only(left: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Special For You, $_username.',
+                  style: defaultHeader2,
+                ),
+                const Text(
+                  'Choose the product yo want.',
+                  style: TextStyle(fontSize: 12),
+                ),
+              ],
+            ),
+          ),
+          CarouselSlider.builder(
+            carouselController: _productCarouselController,
+            itemCount: _productCarousel.length,
+            itemBuilder: (context, index, realIndex) {
+              return buildProductCarousel(_productCarousel[index], index);
+            },
+            options: CarouselOptions(
+              autoPlay: kIsWeb ? true : false,
+              enlargeCenterPage: true,
+              viewportFraction: 0.7,
+              height: size.height * 0.25,
+              aspectRatio: 1 / 1,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _productActiveIndex = index;
+                  _productName = _productCarousel[index].name;
+                  _productAlias = _productCarousel[index].alias;
+                  _productPrice = _productCarousel[index].price;
+                });
+              },
+            ),
+          ),
+          Center(
+            child: Column(
+              children: [
+                Text(
+                  _productName,
+                  style: defaultHeader2,
+                ),
+                Text(_productAlias),
+                Text(
+                  '\$$_productPrice',
+                  style: secondaryHeader1,
+                ),
+              ],
+            ),
+          ),
+          if (kIsWeb) ...[
+            Center(
+              child: buildCarouselIndicator(
+                activeIndex: _productActiveIndex,
+                count: _productCarousel.length,
+                controller: _productCarouselController,
+              ),
+            ),
+          ],
           const SizedBox(height: 16),
           Divider(height: 4, thickness: 4, color: dividerColor),
           const SizedBox(height: 24),
