@@ -3,13 +3,13 @@ import 'dart:convert';
 class User {
   final String id;
   final String name;
-  final String address;
+  final String password;
   final String imagePath;
 
   const User({
     required this.id,
     required this.name,
-    required this.address,
+    required this.password,
     required this.imagePath,
   });
 
@@ -17,7 +17,7 @@ class User {
     return {
       'id': id,
       'name': name,
-      'address': address,
+      'password': password,
       'imagePath': imagePath,
     };
   }
@@ -26,7 +26,7 @@ class User {
     return User(
       id: map['id'] ?? '',
       name: map['name'] ?? '',
-      address: map['address'] ?? '',
+      password: map['password'] ?? '',
       imagePath: map['imagePath'] ?? '',
     );
   }
@@ -37,6 +37,6 @@ class User {
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, address: $address, imagePath: $imagePath)';
+    return 'User(id: $id, name: $name, password: $password, imagePath: $imagePath)';
   }
 }
