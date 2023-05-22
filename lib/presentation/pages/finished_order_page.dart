@@ -12,7 +12,7 @@ class FinishedOrderPage extends StatefulWidget {
   const FinishedOrderPage({Key? key}) : super(key: key);
 
   @override
-  _FinishedOrderPageState createState() => _FinishedOrderPageState();
+  State<FinishedOrderPage> createState() => _FinishedOrderPageState();
 }
 
 class _FinishedOrderPageState extends State<FinishedOrderPage> {
