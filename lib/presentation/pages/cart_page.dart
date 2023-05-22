@@ -19,7 +19,6 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
-  @override // initialize empty cart
   List<Cart> _carts = [];
 
   @override

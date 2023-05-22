@@ -96,12 +96,12 @@ class _DetailScreenState extends State<DetailScreen> {
                       style: defaultHeader1,
                     ),
                     Text(
-                      widget.product.name,
+                      widget.product.alias,
                       style: TextStyle(color: secondaryColor),
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      widget.product.name,
+                      widget.product.about,
                       style: TextStyle(color: secondaryTextColor),
                     ),
                     const SizedBox(height: 16),
